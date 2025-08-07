@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct NandaAgent {
+public struct NandaAgent: Encodable {
     public let id: String
         public let port: Int
         public let apiPort: Int
