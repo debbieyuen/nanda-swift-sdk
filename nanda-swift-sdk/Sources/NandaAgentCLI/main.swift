@@ -10,24 +10,24 @@ import Foundation
 import ArgumentParser
 import nanda_swift_sdk
 
-struct AgentCLI: ParsableCommand {
-    @Option var id: String
-    @Option var port: Int
-    @Option var apiPort: Int
-    @Option var registry: String
 
-    func run() throws {
-        guard let url = URL(string: registry) else {
-            print("Invalid registry URL")
-            return
-        }
+let agentID = MCPUtils.generateAgentID(name: Env.agentPrefix)
+print("🆔 Agent ID: \(agentID)")
+print("🌍 Domain: \(Env.domainName)")
+print("🔢 Num Agents: \(Env.numAgents)")
 
-        let agent = NandaAgent(id: id, port: port, apiPort: apiPort, registryURL: url)
-        agent.start()
-        agent.register()
-        RunLoop.main.run()
-    }
+guard let registry = Env.registryURL else {
+    print("❌ Missing REGISTRY_URL")
+    exit(1)
 }
 
-AgentCLI.main()
+let message = MCPUtils.formatMessage(agentID: agentID, payload: "Hello from Swift Agent")
+
+let bridge = AgentBridge()
+bridge.connect(to: registry)
+bridge.send(message: message)
+print(bridge.receive())
+bridge.disconnect()
+
+
 

@@ -4,23 +4,23 @@
 
 import Foundation
 
-public struct NandaAgent: Encodable {
-    public let id: String
-        public let port: Int
-        public let apiPort: Int
-        public let registryURL: URL
-        public let publicURL: URL?
-        
-        public init(id: String, port: Int, apiPort: Int, registryURL: URL, publicURL: URL? = nil) {
-            self.id = id
-            self.port = port
-            self.apiPort = apiPort
-            self.registryURL = registryURL
-            self.publicURL = publicURL
-        }
+public class Agent {
+    private let name: String
+    private var isRunning: Bool = false
+
+    public init(name: String) {
+        self.name = name
+    }
 
     public func start() {
-        print("Agent \(id) starting on port \(port)")
-        print("Will register with: \(registryURL)")
+        isRunning = true
+        print("🚀 \(name) is now running.")
+    }
+
+    public func stop() {
+        isRunning = false
+        print("🛑 \(name) has stopped.")
     }
 }
+
+
