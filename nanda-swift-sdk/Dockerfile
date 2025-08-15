@@ -1,5 +1,5 @@
 # Build stage
-FROM swift:5.10-jammy as build
+FROM swift:6.1.0 as build
 WORKDIR /app
 COPY . .
 RUN swift build -c release
