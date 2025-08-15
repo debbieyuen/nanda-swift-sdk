@@ -4,6 +4,10 @@ This system implements a Swift-based agent using the [NANDA Agent Protocol](http
 The agent responds to messages via a `/agent/respond` endpoint and provides a health check endpoint for monitoring.
 
 Here is a link to the video: https://youtu.be/ybC4iie_BGs?si=TeXUCxrcGSspfpqn
+[![Watch the demo](https://img.youtube.com/vi/ybC4iie_BGs/0.jpg)](https://youtu.be/ybC4iie_BGs)
+
+Live API: Live API: https://nanda-swift-sdk.onrender.com
+
 
 ## Prerequisites
 - macOS (Mac/MacBook)
