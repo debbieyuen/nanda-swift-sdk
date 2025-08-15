@@ -1,0 +1,21 @@
+{
+  "@context": "https://index.projectnanda.org/agent-facts/v1",
+  "id": "did:web:example.com",
+  "name": "Debbie’s Swift Agent",
+  "handle": "@debbie.swift",
+  "owner": { "name": "Debbie Yuen", "contact": "mailto:YOUR_EMAIL@example.com" },
+  "endpoints": [
+    {
+      "type": "chat",
+      "protocol": "https",
+      "url": "RENDER_URL_GOES_HERE/agent/respond",
+      "methods": ["POST"],
+      "auth": "none"
+    }
+  ],
+  "capabilities": ["conversation.echo","conversation.smalltalk","time.now"],
+  "policy": { "allowedInputs": ["text/plain"], "allowedOutputs": ["text/plain"] },
+  "ttlSeconds": 300,
+  "updatedAt": "2025-08-14T00:00:00Z"
+}
+
