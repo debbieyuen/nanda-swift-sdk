@@ -1,6 +1,3 @@
-# nanda-swift-sdk
-Nanda Swift SDK
-
 # Nanda Swift SDK
 This system implements a Swift-based agent using the [NANDA Agent Protocol](https://github.com/projnanda/nanda-agent) and deploys it as an HTTP service. It allows you to register an agent with a unique ID, expose API endpoints for interaction, and run on a public endpoint (e.g., via Render).  
 
