@@ -17,7 +17,7 @@ public class AgentBridge {
     /// Connects the agent bridge to a given endpoint (URL).
     public func connect(to endpoint: URL) {
         connected = true
-        print("🌉 AgentBridge connected to \(endpoint.absoluteString)")
+        print("AgentBridge connected to \(endpoint.absoluteString)")
     }
 
     /// Sends a message to the bridge if connected.

@@ -12,9 +12,9 @@ import nanda_swift_sdk
 
 
 let agentID = MCPUtils.generateAgentID(name: Env.agentPrefix)
-print("🆔 Agent ID: \(agentID)")
-print("🌍 Domain: \(Env.domainName)")
-print("🔢 Num Agents: \(Env.numAgents)")
+print("Agent ID: \(agentID)")
+print("Domain: \(Env.domainName)")
+print("Num Agents: \(Env.numAgents)")
 
 guard let registry = Env.registryURL else {
     print("Missing REGISTRY_URL")

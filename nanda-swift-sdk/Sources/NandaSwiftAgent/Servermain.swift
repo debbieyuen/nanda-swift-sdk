@@ -9,7 +9,7 @@ import Foundation
 import Vapor
 import nanda_swift_sdk
 
-// ---- Routes ----
+// Routes
 func routes(_ app: Application) throws {
 
     // GET /health  -> "ok"
