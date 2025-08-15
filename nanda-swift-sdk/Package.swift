@@ -1,13 +1,12 @@
 // swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// swift-tools-version: 6.1
 import PackageDescription
 
 let package = Package(
     name: "nanda-swift-sdk",
     platforms: [
-        .macOS(.v12)
+        .macOS(.v13)
     ],
     products: [
         .library(
@@ -17,9 +16,14 @@ let package = Package(
         .executable(
             name: "NandaAgentCLI",
             targets: ["NandaAgentCLI"]
+        ),
+        .executable(
+            name: "NandaSwiftAgent",
+            targets: ["NandaSwiftAgent"]
         )
     ],
     dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.92.0"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0")
     ],
     targets: [
@@ -32,6 +36,14 @@ let package = Package(
                 "nanda-swift-sdk",
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
             ]
+        ),
+        .executableTarget(
+            name: "NandaSwiftAgent",
+            dependencies: [
+                "nanda-swift-sdk",
+                .product(name: "Vapor", package: "vapor")
+            ],
+            path: "Sources/NandaSwiftAgent"
         ),
         .testTarget(
             name: "nanda-swift-sdkTests",

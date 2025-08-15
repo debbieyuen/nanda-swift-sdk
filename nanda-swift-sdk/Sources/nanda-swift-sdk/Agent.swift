@@ -5,7 +5,7 @@
 import Foundation
 
 public class Agent {
-    private let name: String
+    public let name: String
     private var isRunning: Bool = false
 
     public init(name: String) {
@@ -21,6 +21,15 @@ public class Agent {
         isRunning = false
         print("🛑 \(name) has stopped.")
     }
-}
 
+    // The brain to call the CLI and HTTP server will both call
+    public func respond(to message: String) -> String {
+        let text = message.trimmingCharacters(in: .whitespacesAndNewlines)
+        if text.isEmpty { return "Hello from \(name)! Try 'echo hello', 'time', or 'about'." }
+        if text.lowercased().hasPrefix("echo ") { return String(text.dropFirst(5)) }
+        if text.lowercased().contains("time") { return "Server time: \(Date())" }
+        if text.lowercased().contains("about") { return "\(name) (Swift SDK) is alive and responding." }
+        return "You said: \(text)"
+    }
+}
 
