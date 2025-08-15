@@ -14,12 +14,12 @@ public class Agent {
 
     public func start() {
         isRunning = true
-        print("🚀 \(name) is now running.")
+        print("\(name) is now running.")
     }
 
     public func stop() {
         isRunning = false
-        print("🛑 \(name) has stopped.")
+        print("\(name) has stopped.")
     }
 
     // The brain to call the CLI and HTTP server will both call

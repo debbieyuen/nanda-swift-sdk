@@ -27,7 +27,7 @@ public struct MCPUtils {
     public static func parseRegistryURL(from filePath: String) -> URL? {
         guard let content = try? String(contentsOfFile: filePath).trimmingCharacters(in: .whitespacesAndNewlines),
               let url = URL(string: content) else {
-            print("❌ Failed to parse registry URL from \(filePath)")
+            print("Failed to parse registry URL from \(filePath)")
             return nil
         }
         return url

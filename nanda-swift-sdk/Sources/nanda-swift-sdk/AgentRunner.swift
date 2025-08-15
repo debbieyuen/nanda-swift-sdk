@@ -19,12 +19,12 @@ public class AgentRunner {
     }
 
     public func startAllAgents() {
-        print("🔄 Starting agents...\n")
+        print("Starting agents...\n")
 
         for agent in agents {
             agent.start()
         }
 
-        print("\n✅ All agents started.")
+        print("\n All agents started.")
     }
 }

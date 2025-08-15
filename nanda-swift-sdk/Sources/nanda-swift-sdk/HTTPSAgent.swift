@@ -17,22 +17,22 @@ public class HTTPSAgent {
 
     public func run() {
         isRunning = true
-        print("🌐 HTTPS Agent running on port \(port)...")
+        print("HTTPS Agent running on port \(port)...")
         simulateAgentLoop()
     }
 
     private func simulateAgentLoop() {
-        print("🧠 Listening for secure agent instructions...")
+        print("Listening for secure agent instructions...")
         // Simulate a wait loop
         for i in 1...3 {
-            print("🔁 Handling secure request #\(i)...")
+            print("Handling secure request #\(i)...")
             Thread.sleep(forTimeInterval: 1.0) // simulate delay
         }
-        print("✅ HTTPS Agent finished simulation.")
+        print("HTTPS Agent finished simulation.")
     }
 
     public func stop() {
         isRunning = false
-        print("🛑 HTTPS Agent stopped.")
+        print("HTTPS Agent stopped.")
     }
 }

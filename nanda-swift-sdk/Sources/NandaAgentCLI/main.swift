@@ -17,7 +17,7 @@ print("🌍 Domain: \(Env.domainName)")
 print("🔢 Num Agents: \(Env.numAgents)")
 
 guard let registry = Env.registryURL else {
-    print("❌ Missing REGISTRY_URL")
+    print("Missing REGISTRY_URL")
     exit(1)
 }
 

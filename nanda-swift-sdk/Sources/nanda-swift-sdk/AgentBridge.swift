@@ -23,24 +23,24 @@ public class AgentBridge {
     /// Sends a message to the bridge if connected.
     public func send(message: String) {
         guard connected else {
-            print("⚠️ Cannot send message — not connected")
+            print("Cannot send message — not connected")
             return
         }
-        print("📤 AgentBridge sent message: '\(message)'")
+        print("AgentBridge sent message: '\(message)'")
     }
 
     /// Receives a mock response from the bridge if connected.
     public func receive() -> String {
         guard connected else {
-            return "⚠️ Not connected — no message received"
+            return "Not connected — no message received"
         }
         // Stubbed response
-        return "📨 Received response from bridge"
+        return "Received response from bridge"
     }
 
     /// Disconnects the bridge.
     public func disconnect() {
         connected = false
-        print("🔌 AgentBridge disconnected")
+        print("AgentBridge disconnected")
     }
 }
