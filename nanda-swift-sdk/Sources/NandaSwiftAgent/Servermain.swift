@@ -7,7 +7,7 @@
 
 import Foundation
 import Vapor
-@testable import nanda_swift_sdk
+import nanda_swift_sdk
 
 // ---- Routes ----
 func routes(_ app: Application) throws {
