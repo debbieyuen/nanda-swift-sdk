@@ -16,6 +16,7 @@ Live API: Live API: https://nanda-swift-sdk.onrender.com
 - Bash shell
 - Internet connectivity
 - A [Render](https://render.com/) account for deployment
+- Vapor
   
 ## Configuration
 
